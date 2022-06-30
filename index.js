@@ -7,7 +7,6 @@ import gql from 'graphql-tag';
 const __dirname = path.resolve();
 /**
  * @description Read files synchronously from a folder, with natural sorting
- * Source: https://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object
  * @param {String} dir Absolute path to directory
  * @returns {Object[]} List of object, each object represent a file
  * structured like so: `{ filepath, name, ext, stat }`
@@ -57,7 +56,7 @@ mutation uploadFileItem($member: String, $title: String!, $image: String!) {
 `
 
 axios.interceptors.request.use(config => {
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbDR5ZzZjdzgwNDUydHhqeGxhNWg0NGQ5IiwiaWF0IjoxNjU2NTExNDczLCJleHAiOjE2NTY1OTc4NzN9.CjiMxS3RGyhtnxOKlqLPsZRSZtZ2izNKaaMkTRUtnJo';
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..JWT';
   config.headers["Authorization"] = `Bearer ${token}`;
   return config;
 });
